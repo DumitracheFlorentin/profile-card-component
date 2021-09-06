@@ -22,6 +22,16 @@
 
     height: 100%;
     width: 100%;
+
+    @include util.breakpoint-down(medium) {
+      background-size: 30em;
+      background-position: 3em -10em;
+    }
+
+    @include util.breakpoint-down(small) {
+      background-size: 20em;
+      background-position: 1em -10em;
+    }
   }
 
   &::after {
@@ -37,6 +47,16 @@
     background-position: 120% 300%;
     background-repeat: no-repeat;
     background-size: 50em;
+
+    @include util.breakpoint-down(medium) {
+      background-size: 40em;
+      background-position: 120% 200%;
+    }
+
+    @include util.breakpoint-down(small) {
+      background-size: 33em;
+      background-position: 500% 140%;
+    }
   }
 
   &__container {
