@@ -1,0 +1,117 @@
+@use '../util';
+
+.hero {
+  height: 100%;
+  background-color: var(--dark-cyan);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../../../images/bg-pattern-top.svg");
+    background-attachment: fixed;
+    background-position: 2em -20em;
+    background-repeat: no-repeat;
+    background-size: 50em;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+
+    background-image: url("../../../images/bg-pattern-bottom.svg");
+    background-attachment: fixed;
+    background-position: 120% 300%;
+    background-repeat: no-repeat;
+    background-size: 50em;
+  }
+
+  &__container {
+    background-color: white;
+    width: 28em;
+    z-index: 999;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    .bg_card {
+      display: block;
+      width: 100%;
+    }
+
+    .card {
+      position: absolute;
+      top: 0%;
+      left: 36%;
+      margin: 8rem auto;
+      text-align: center;
+
+      .profile {
+        border-radius: 50%;
+        border: 5px solid white;
+        margin-bottom: 0.5rem;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+
+        h3 {
+          margin-bottom: 0.1rem;
+          margin-right: 0.3rem;
+          font-size: util.rem(18);
+          color: var(--very-dark-blue);
+        }
+
+        p {
+          color: var(--dark-gray);
+        }
+      }
+
+      .location {
+        color: var(--dark-gray);
+      }
+    }
+
+    .line {
+      width: 100%;
+      height: 0.08rem;
+      background-color: hsla(227, 10%, 46%, 0.2);
+      margin-top: 10rem;
+    }
+
+    .stats {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 1.5rem 4rem 1.5rem 3rem;
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+          font-size: util.rem(18);
+        }
+
+        p {
+          color: var(--dark-gray);
+        }
+      }
+    }
+  }
+}
